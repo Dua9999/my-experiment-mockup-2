@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Storefront Mockup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body-theme">
 
+    <!-- Phone Frame Container -->
+    <div class="phone-frame" id="phone-frame-theme">
+        <div class="phone-notch"></div>
+        <div class="phone-screen" id="phone-screen-theme">
+            
+            <!-- Store Header with Clean Counter -->
+            <header class="store-header" id="header-theme">
+                <h1 class="logo" id="store-logo">K-RECORDS</h1>
+                <div class="header-cart" id="cart-trigger">
+                    🛒 Cart (<span id="cart-count">0</span>)
+                </div>
+            </header>
+
+            <!-- Dynamic Framing / Progress Banner (Hidden in Control Mode) -->
+            <div class="debug-banner" id="framing-banner" style="display: none;">
+                <span id="banner-text"></span>
+                <div class="progress-bar-container" id="visual-progress-bar">
+                    <div class="progress-fill" id="progress-fill-bar"></div>
+                </div>
+            </div>
+
+            <!-- Scrollable Mobile Content Area -->
+            <div class="scroll-content">
+                <!-- Product Artwork with Zoom Trigger -->
+                <div class="product-image-container" id="zoom-trigger" title="Click to zoom image">
+                    <img id="product-artwork" src="" alt="Product Mockup" class="main-mockup-img">
+                    <span class="zoom-hint">🔍 Tap to zoom</span>
+                </div>
+
+                <!-- Product Info & Purchase Panel -->
+                <div class="product-info-col">
+                    <h2 class="product-title" id="prod-title">Product Title</h2>
+                    <p class="product-subtitle" id="prod-subtitle">Product Subtitle</p>
+                    <div class="product-price" id="prod-price">€0.00</div>
+
+                    <!-- Dynamic Selector Group -->
+                    <div class="selector-group" id="selector-container"></div>
+
+                    <!-- Interactive Accordion for Product Details -->
+                    <div class="details-accordion-container">
+                        <button id="accordion-toggle" class="accordion-btn">▼ View Product Details & Info</button>
+                        <div id="accordion-content" class="accordion-panel" style="display: none;">
+                            <p id="details-text">Loading details...</p>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <button id="add-to-cart-btn" class="cta-button">ADD TO CART</button>
+
+                    <!-- Feedback Toast -->
+                    <div id="cart-toast" class="toast-msg" style="display: none;">✓ Added to cart!</div>
+                </div>
+
+                <footer class="store-footer" id="footer-text">
+                    All sales count towards Hanteo and Circle charts.
+                </footer>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Image Zoom Lightbox Modal -->
+    <div id="zoom-modal" class="zoom-modal" style="display: none;">
+        <span id="close-zoom" class="close-zoom-btn">&times;</span>
+        <img id="zoomed-img" class="zoomed-image-content" src="" alt="Zoomed Product View">
+    </div>
+
+    <!-- Simple Secure Checkout Confirmation Modal -->
+    <div id="checkout-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Secure Checkout</h3>
+            <p id="checkout-summary-text" style="font-size:11px; color:#555; margin: 10px 0;">Review your selection before finalizing order.</p>
+            <button id="finalize-order" class="cta-button">PAY NOW</button>
+            <button id="close-modal" class="close-btn">Return to Shop</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
